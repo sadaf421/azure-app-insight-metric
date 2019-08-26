@@ -1,10 +1,10 @@
-const appInsights = require('applicationinsights');
-appInsights.setup("9c9a6df0-c952-4c4d-bf57-908177a7268c");
-appInsights.start();
+
 const {  dialogflow  } = require('actions-on-google');
 const express = require('express');
 const bodyParser = require('body-parser');
-
+const appInsights = require("applicationinsights");
+appInsights.setup("9c9a6df0-c952-4c4d-bf57-908177a7268c");
+appInsights.start();
 const app = dialogflow({debug:true});
 
 app.intent('Default Welcome Intent', conv => {
