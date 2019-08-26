@@ -11,11 +11,18 @@ ai.setup(process.env.APPLICATIONINSIGHTSKEY || 'e48dae5c-e538-4317-bc50-18a8a844
     .setAutoCollectConsole(true)
     .start();
 
-
-//--------- skill response code for deafult intents  - B E G I N  --------------//
+let client =ai.defaultClient;
+let startTime = Date.now();
 const {  dialogflow  } = require('actions-on-google');
 const express = require('express');
 const bodyParser = require('body-parser');
+let duration = Date.now() - startTime;
+success = true;
+
+client.trackDependency({dependencyTypeName: "dependency name", name: "command name", duration: duration, success: success});
+
+//--------- skill response code for deafult intents  - B E G I N  --------------//
+
 const app = dialogflow({debug:true});
 
 app.intent('Default Welcome Intent', conv => {
