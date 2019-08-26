@@ -1,10 +1,12 @@
 
+
+// Enable telemetry collection with Application Insights
+var ai = require('applicationinsights');
+ai.setup(process.env.APPLICATIONINSIGHTSKEY || 'e48dae5c-e538-4317-bc50-18a8a844e5d2').start();
 const {  dialogflow  } = require('actions-on-google');
 const express = require('express');
 const bodyParser = require('body-parser');
-const appInsights = require("applicationinsights");
-appInsights.setup("adcf71ad-2172-4ac9-a530-6cd723955bff");
-appInsights.start();
+
 const app = dialogflow({debug:true});
 
 app.intent('Default Welcome Intent', conv => {
