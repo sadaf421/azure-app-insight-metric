@@ -1,4 +1,4 @@
-const appInsights = require("applicationinsights");
+import appInsights from 'applicationinsights';
 appInsights.setup("9c9a6df0-c952-4c4d-bf57-908177a7268c");
 appInsights.start();
 const {  dialogflow  } = require('actions-on-google');
@@ -7,7 +7,8 @@ const bodyParser = require('body-parser');
 
 const app = dialogflow({debug:true});
 
-app.intent('Default Welcome Intecd..Default Fallback Intentnt', conv => {
+app.intent('Default Welcome Intent', conv => {
+    
   conv.ask('Hello Judith, Welcome to Appointment Checker. You can say things such as Make an appointment or Check an appointment.')
 });
 
