@@ -2,7 +2,14 @@
 
 //----- Enable telemetry collection with Application Insights --------------------//
 var ai = require('applicationinsights');
-ai.setup(process.env.APPLICATIONINSIGHTSKEY || 'e48dae5c-e538-4317-bc50-18a8a844e5d2').start();
+ai.setup(process.env.APPLICATIONINSIGHTSKEY || 'e48dae5c-e538-4317-bc50-18a8a844e5d2')
+    .setAutoDependencyCorrelation(true)
+    .setAutoCollectRequests(true)
+    .setAutoCollectPerformance(true)
+    .setAutoCollectExceptions(true)
+    .setAutoCollectDependencies(true)
+    .setAutoCollectConsole(true)
+    .start();
 
 
 //--------- skill response code for deafult intents  - B E G I N  --------------//
