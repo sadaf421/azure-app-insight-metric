@@ -11,7 +11,7 @@ const app = dialogflow({debug:true});
 
 app.intent('Default Welcome Intent', conv => {
     
-  conv.ask('Hello Judith, Welcome to Appointment Checker. You can say things such as Make an appointment or Check an appointment.')
+  conv.ask('Welcome to Appointment Checker. You can say things such as Make an appointment or Check an appointment.')
 });
 
 app.intent('Default Fallback Intent', conv => {
@@ -20,6 +20,7 @@ app.intent('Default Fallback Intent', conv => {
   
 const expressApp = express().use(bodyParser.json())
 expressApp.post('/fulfillment', app)
-var port=process.env.PORT||3000;
+const newLocal = 3000;
+var port=process.env.PORT||newLocal;
 expressApp.listen(port);
 
