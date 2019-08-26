@@ -1,4 +1,4 @@
-import appInsights from 'applicationinsights';
+const appInsights = require('applicationinsights');
 appInsights.setup("9c9a6df0-c952-4c4d-bf57-908177a7268c");
 appInsights.start();
 const {  dialogflow  } = require('actions-on-google');
