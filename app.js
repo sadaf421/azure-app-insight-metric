@@ -21,7 +21,7 @@ const bodyParser = require('body-parser');
 const app = dialogflow({debug:true});
 
 app.intent('Default Welcome Intent', conv => {
-  conv.ask('Welcome to Appointment Checker. You can say things such as Make an appointment or Check an appointment.')
+  conv.ask('Welcome to Appointment Checker. You can say things such as make an appointment or Check an appointment.')
 });
 
 app.intent('Default Fallback Intent', conv => {
